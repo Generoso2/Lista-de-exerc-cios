@@ -27,7 +27,7 @@ int main() {
     fim = clock();
     tempo_decorrido = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
 
-    printf("A soma dos elementos do array é: %d\n", soma);
+    printf("\nA soma dos elementos do array é: %d\n", soma);
     printf("O tempo de execução para calcular a soma foi: %.6f segundos\n", tempo_decorrido);
 
     return 0;
