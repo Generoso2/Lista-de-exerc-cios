@@ -9,14 +9,12 @@ typedef struct {
     int idade;
 } Pessoa;
 
-// Função de comparação para `qsort`
 int comparar_idade(const void *a, const void *b) {
     Pessoa *pessoaA = (Pessoa *)a;
     Pessoa *pessoaB = (Pessoa *)b;
     return (pessoaA->idade - pessoaB->idade);
 }
 
-// Função para cadastrar uma pessoa
 void cadastrarPessoa(Pessoa pessoas[], int *numPessoas) {
     if (*numPessoas >= MAX_PESSOAS) {
         printf("Limite de pessoas atingido.\n");
@@ -25,15 +23,14 @@ void cadastrarPessoa(Pessoa pessoas[], int *numPessoas) {
 
     printf("Digite o nome da pessoa: ");
     fgets(pessoas[*numPessoas].nome, sizeof(pessoas[*numPessoas].nome), stdin);
-    pessoas[*numPessoas].nome[strcspn(pessoas[*numPessoas].nome, "\n")] = '\0'; // Remover nova linha
+    pessoas[*numPessoas].nome[strcspn(pessoas[*numPessoas].nome, "\n")] = '\0';
 
     printf("Digite a idade da pessoa: ");
     scanf("%d", &pessoas[*numPessoas].idade);
     (*numPessoas)++;
-    getchar(); // Limpar o buffer do teclado
+    getchar();
 }
 
-// Função para exibir todas as pessoas
 void exibirPessoas(Pessoa pessoas[], int numPessoas) {
     for (int i = 0; i < numPessoas; i++) {
         printf("Pessoa %d:\n", i + 1);
@@ -55,7 +52,7 @@ int main() {
         printf("4. Sair\n");
         printf("Escolha uma opcao: ");
         scanf("%d", &opcao);
-        getchar(); // Limpar o buffer do teclado
+        getchar();
 
         switch (opcao) {
             case 1:
