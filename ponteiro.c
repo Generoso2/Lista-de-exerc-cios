@@ -2,7 +2,8 @@
 #include <string.h>
 #include <ctype.h>
 
-void to_uppercase(char *str) {
+// Função para converter uma string para maiúsculas
+void maiusculas(char *str) {
     if (str == NULL) return;
 
     char *ptr = str;
@@ -23,7 +24,7 @@ int main() {
         }
 
         printf("Original: %s\n", str);
-        to_uppercase(str);
+        maiusculas(str);
         printf("Maiúsculas: %s\n", str);
     } else {
         printf("Erro ao ler a string.\n");
